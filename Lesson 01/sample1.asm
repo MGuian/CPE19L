@@ -19,7 +19,7 @@ start:
     int 21h
     mov dl, 'C'
     int 21h
-    mov dl, 'P'
+    mov dl, 'p'
     int 21h
     mov dl, 'E'
     int 21h
