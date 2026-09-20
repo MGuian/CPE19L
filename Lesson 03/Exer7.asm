@@ -1,8 +1,10 @@
 .model small
-.stack
+.stack 100h
 .code
 
 start:
+    mov ax, 0003h
+    int 10h
 
     mov ah, 02h
 
