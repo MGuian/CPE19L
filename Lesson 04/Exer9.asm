@@ -5,16 +5,13 @@
     p2  DB '|                                                  |',13,10,'$'
     p3  DB '|       </>      ENGR. GUIAN JAUNDELL R. MANALO    |',13,10,'$'
     p4  DB '|                      COMPUTER ENGINEER           |',13,10,'$'
-    p5  DB '|                                                  |',13,10,'$'
-    p6  DB '|   COMPANY NAME                                   |',13,10,'$'
-    p7  DB '|                     OFFICE No.                   |',13,10,'$'
-    p8  DB '|                     FAX No.                      |',13,10,'$'
-    p9  DB '|   COMPANY WEBSITE                                |',13,10,'$'
-    p10 DB '|                     RES No.                      |',13,10,'$'
-    p11 DB '|                     +63 945 854 9482             |',13,10,'$'
-    p12 DB '|                     manaloguian@gmail.com        |',13,10,'$'
-    p13 DB '|                                                  |',13,10,'$'
-    p14 DB '====================================================',13,10,'$'
+    p5  DB '|   COMPANY NAME                                   |',13,10,'$'
+    p6  DB '|                     OFFICE No.                   |',13,10,'$'
+    p7  DB '|                     FAX No.                      |',13,10,'$'
+    p8  DB '|   COMPANY WEBSITE                                |',13,10,'$'
+    p9  DB '|                     RES No.                      |',13,10,'$'
+    p10 DB '|                     +63 945 854 9482             |',13,10,'$'
+    p11 DB '|                     manaloguian@gmail.com        |',13,10,'$'
 .code
 
 start:
@@ -32,6 +29,9 @@ start:
     int 21h
     mov ah,09h
     mov dx,offset p4
+    int 21h
+    mov ah,09h
+    mov dx,offset p2
     int 21h
     mov ah,09h
     mov dx,offset p5
@@ -55,13 +55,10 @@ start:
     mov dx,offset p11
     int 21h
     mov ah,09h
-    mov dx,offset p12
+    mov dx,offset p2
     int 21h
     mov ah,09h
-    mov dx,offset p13
-    int 21h
-    mov ah,09h
-    mov dx,offset p14
+    mov dx,offset p1
     int 21h
 
     mov ah,4ch
