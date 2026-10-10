@@ -17,8 +17,15 @@
 
 .code
 start:
+	mov ax,@data
+    mov ds,ax
+
+	mov ax,1003h   
+    mov bl,0
+    int 10h
+
 ;----- Background
-    mov ah,07h
+    mov ax,0700h
 	mov bh,3Fh
 	mov ch,0
 	mov cl,0
@@ -26,7 +33,7 @@ start:
 	mov dl,79
 	int 10h
 ;----- Black Row
-    mov ah,07h
+    mov ax,0700h
 	mov bh,00h
 	mov ch,6
 	mov cl,53
@@ -34,7 +41,7 @@ start:
 	mov dl,61
 	int 10h
 ;----- Brown Row
-    mov ah,07h
+    mov ax,0700h
 	mov bh,60h
 	mov ch,7
 	mov cl,53
@@ -42,7 +49,7 @@ start:
 	mov dl,61
 	int 10h
 ;----- Red Row
-    mov ah,07h
+    mov ax,0700h
 	mov bh,40h
 	mov ch,8
 	mov cl,53
@@ -50,7 +57,7 @@ start:
 	mov dl,61
 	int 10h
 ;----- Orange Row
-    mov ah,07h
+    mov ax,0700h
 	mov bh,0C0h
 	mov ch,9
 	mov cl,53
@@ -58,15 +65,15 @@ start:
 	mov dl,61
 	int 10h
 ;----- Yellow Row
-    mov ah,07h
-	mov bh,60h
+    mov ax,0700h
+	mov bh,0E0h
 	mov ch,10
 	mov cl,53
 	mov dh,10
 	mov dl,61
 	int 10h
 ;----- Green Row
-    mov ah,07h
+    mov ax,0700h
 	mov bh,20h
 	mov ch,11
 	mov cl,53
@@ -74,7 +81,7 @@ start:
 	mov dl,61
 	int 10h
 ;----- Blue Row
-    mov ah,07h
+    mov ax,0700h
 	mov bh,10h
 	mov ch,12
 	mov cl,53
@@ -82,7 +89,7 @@ start:
 	mov dl,61
 	int 10h
 ;----- Violet Row
-    mov ah,07h
+    mov ax,0700h
 	mov bh,50h
 	mov ch,13
 	mov cl,53
@@ -90,7 +97,7 @@ start:
 	mov dl,61
 	int 10h
 ;----- Grey Row
-    mov ah,07h
+    mov ax,0700h
 	mov bh,70h
 	mov ch,14
 	mov cl,53
@@ -98,16 +105,15 @@ start:
 	mov dl,61
 	int 10h
 ;----- White Row
-    mov ah,07h
-	mov bh,70h
+    mov ax,0700h
+	mov bh,0F0h
 	mov ch,15
 	mov cl,53
 	mov dh,15
 	mov dl,61
 	int 10h
 
-    mov ax,@data
-    mov ds,ax
+    
 ;----- Title Row
     mov ah,02h
 	mov bh,00h
