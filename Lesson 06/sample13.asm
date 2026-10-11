@@ -25,35 +25,41 @@ start:
     je Malaki
     cmp al,61h
     je Maliit
-    jmp start
+    jne start
 
 Malaki:
     mov ah,09h
     mov dx,offset p1
     int 21h
-    jmp tanong
-
-Maliit:
-    mov ah,09h
-    mov dx,offset p2
-    int 21h
-
-tanong:
-    mov ah,09h
+    
     mov dx,offset p3
     int 21h
 
     mov ah,07h
     int 21h
 
+    mov ah,01h
     cmp al,'X'
-    je Labas
-    cmp al,'x'
-    je Labas
-    jmp start
+    je EXIT
+    jne start
 
-Labas:
-    mov ah,4ch
+Maliit:
+    mov ah,09h
+    mov dx,offset p2
+    int 21h
+
+    mov dx,offset p3
+    int 21h
+
+    mov ah,07h
+    int 21h
+
+    mov ah,01h
+    cmp al,'X'
+    je EXIT
+    jne start
+
+EXIT: mov ah,4ch
     int 21h
 
 end start
